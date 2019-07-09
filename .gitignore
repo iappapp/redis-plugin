@@ -1,9 +1,9 @@
 # idea file
-./*.iml
-./*.zip
-./out/**
-./out
-./.idea/**
-./.idea
+*.iml
+*.zip
+out/**
+/out
+.idea/**
+.idea
 
 # vs code
