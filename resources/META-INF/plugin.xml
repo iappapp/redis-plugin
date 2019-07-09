@@ -1,0 +1,46 @@
+<idea-plugin>
+  <id>com.treefintech.redis.plugin</id>
+  <name>redis-connector</name>
+  <version>1.0</version>
+  <vendor email="mayonghua@treefinance.com.cn" url="http://www.99gfd.com">
+    杭州大树科技有限公司
+  </vendor>
+
+  <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <themeProvider id="ea943827-59c7-4f73-b544-c7dafd811844"
+                   path="/com/treefintech/redis/plugin/redis_theme.theme.json"/>
+    <applicationService serviceInterface="com.treefintech.redis.plugin.service.RedisApplicationService"
+                        serviceImplementation="com.treefintech.redis.plugin.service.impl.RedisApplicationServiceImpl"/>
+    <applicationService serviceImplementation="com.treefintech.redis.plugin.setting.RedisDBSetting" />
+  </extensions>
+
+  <actions>
+
+    <action id="redis.tool.button.action" class="com.treefintech.redis.plugin.action.RedisToolButtonAction"
+            text="redis.tool.button" description="RedisManager" icon="/icon/redis.png">
+      <add-to-group group-id="MainToolBar" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
